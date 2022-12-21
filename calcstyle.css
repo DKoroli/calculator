@@ -20,7 +20,7 @@ body {
   top: 251px;
   max-width: 400px;
   height: 720px;
-  /* background-color: red; */
+
   margin: auto;
 }
 
@@ -31,88 +31,7 @@ body {
   font-size: 30px;
   font-weight: bold;
   background-color: white;
-  /* border: 1px solid black; */
 }
-
-/* .num1 {
-  bottom: 240px;
-  left: 0;
-}
-
-.num2 {
-  bottom: 240px;
-  left: 150px;
-}
-
-.num3 {
-  bottom: 240px;
-  left: 300px;
-}
-
-.minus {
-  bottom: 240px;
-  right: 0;
-}
-
-.num4 {
-  bottom: 360px;
-  left: 0;
-}
-
-.num5 {
-  bottom: 360px;
-  left: 150px;
-}
-
-.num6 {
-  bottom: 360px;
-  left: 300px;
-}
-
-.plus {
-  bottom: 120px;
-  right: 0;
-}
-
-.clear {
-  bottom: 120px;
-  left: 0;
-}
-
-.num0 {
-  bottom: 120px;
-  left: 150px;
-}
-
-.dot {
-  bottom: 120px;
-  left: 300px;
-}
-
-.multiply {
-  bottom: 360px;
-  right: 0;
-}
-
-.num7 {
-  bottom: 480px;
-  left: 0;
-}
-
-.num8 {
-  bottom: 480px;
-  left: 150px;
-}
-
-.num9 {
-  bottom: 480px;
-  left: 300px;
-}
-
-.divide {
-  bottom: 480px;
-  right: 0;
-} */
 
 .result {
   width: 600px;
@@ -122,8 +41,6 @@ body {
 }
 
 .properties {
-  /* position: absolute; */
-  /* width: 150px; */
   height: 120px;
   font-size: 30px;
   font-weight: bold;
