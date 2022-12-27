@@ -18,101 +18,52 @@ body {
 .calculator {
   position: relative;
   top: 251px;
-  width: 600px;
+  max-width: 400px;
   height: 720px;
-  /* background-color: red; */
   margin: auto;
 }
 
 .inp-properties {
-  position: absolute;
+  padding-left: 6px;
+  padding-right: 6px;
   height: 120px;
-  width: 596px;
   font-size: 30px;
   font-weight: bold;
   background-color: white;
   border: 1px solid black;
 }
 
-.num1 {
-  bottom: 240px;
-  left: 0;
+.result {
+  width: 600px;
+  height: 100px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.num2 {
-  bottom: 240px;
-  left: 150px;
+.properties {
+  height: 120px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.num3 {
-  bottom: 240px;
-  left: 300px;
+.flex-grow {
+  flex: 1;
 }
 
-.minus {
-  bottom: 240px;
-  right: 0;
+.flex-grow3 {
+  flex: 3;
 }
 
-.num4 {
-  bottom: 360px;
-  left: 0;
+.disp-flex {
+  display: flex;
 }
 
-.num5 {
-  bottom: 360px;
-  left: 150px;
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.num6 {
-  bottom: 360px;
-  left: 300px;
-}
 
-.plus {
-  bottom: 120px;
-  right: 0;
-}
-
-.clear {
-  bottom: 120px;
-  left: 0;
-}
-
-.num0 {
-  bottom: 120px;
-  left: 150px;
-}
-
-.dot {
-  bottom: 120px;
-  left: 300px;
-}
-
-.multiply {
-  bottom: 360px;
-  right: 0;
-}
-
-.num7 {
-  bottom: 480px;
-  left: 0;
-}
-
-.num8 {
-  bottom: 480px;
-  left: 150px;
-}
-
-.num9 {
-  bottom: 480px;
-  left: 300px;
-}
-
-.divide {
-  bottom: 480px;
-  right: 0;
-}
 
 .result {
   position: absolute;
@@ -133,7 +84,3 @@ body {
   font-weight: bold;
 }
 
-.delite {
-  top: 0;
-  right: 0;
-}
