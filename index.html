@@ -7,41 +7,43 @@
     <link rel="stylesheet" href="calcstyle.css" />
     <title>Calculator</title>
   </head>
-  <body class="body">
+  <body>
     <header class="headcalc">
-      <p class="calc">Калкулатор</p>
+      <p class="calc">Калькулятор</p>
     </header>
     <div class="calculator">
       <div class="div1 row">
-        <div class="inp-properties flex-grow3"></div>
-        <button class="delite properties flex-grow"><=</button>
+        <div id="input" class="inp-properties flex-grow3"></div>
+        <button id="delBtn" class="delite properties flex-grow"><=</button>
       </div>
       <div class="div2 row">
-        <button class="num7 properties flex-grow">7</button>
-        <button class="num8 properties flex-grow">8</button>
-        <button class="num9 properties flex-grow">9</button>
-        <button class="divide properties flex-grow">/</button>
+        <button id="btn7" class="num7 properties flex-grow">7</button>
+        <button id="btn8" class="num8 properties flex-grow">8</button>
+        <button id="btn9" class="num9 properties flex-grow">9</button>
+        <button id="divideBtn" class="divide properties flex-grow">/</button>
       </div>
       <div class="div3 row">
-        <button class="num4 properties flex-grow">4</button>
-        <button class="num5 properties flex-grow">5</button>
-        <button class="num6 properties flex-grow">6</button>
-        <button class="multiply properties flex-grow">x</button>
+        <button id="btn4" class="num4 properties flex-grow">4</button>
+        <button id="btn5" class="num5 properties flex-grow">5</button>
+        <button id="btn6" class="num6 properties flex-grow">6</button>
+        <button id="multiplyBtn" class="multiply properties flex-grow">
+          x
+        </button>
       </div>
       <div class="div4 row">
-        <button class="num1 properties flex-grow">1</button>
-        <button class="num2 properties flex-grow">2</button>
-        <button class="num3 properties flex-grow">3</button>
-        <button class="minus properties flex-grow">-</button>
+        <button id="btn1" class="num1 properties flex-grow">1</button>
+        <button id="btn2" class="num2 properties flex-grow">2</button>
+        <button id="btn3" class="num3 properties flex-grow">3</button>
+        <button id="minusBtn" class="minus properties flex-grow">-</button>
       </div>
       <div class="div5 row">
-        <button class="clear properties flex-grow">C</button>
-        <button class="num0 properties flex-grow">0</button>
-        <button class="dot properties flex-grow">.</button>
-        <button class="plus properties flex-grow">+</button>
+        <button id="clearBtn" class="clear properties flex-grow">C</button>
+        <button id="btn0" class="num0 properties flex-grow">0</button>
+        <button id="dotBtn" class="dot properties flex-grow">.</button>
+        <button id="plusBtn" class="plus properties flex-grow">+</button>
       </div>
       <div class="div6 row">
-        <button class="result">=</button>
+        <button id="resultBtn" class="result">=</button>
       </div>
     </div>
 
