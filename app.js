@@ -58,6 +58,14 @@ button0.addEventListener("click", () => {
   input.innerHTML = input.innerHTML + "0";
 });
 dot.addEventListener("click", () => {
+  if (input.innerHTML === "") {
+    input.innerHTML = "0.";
+    return;
+  }
+  let ver = input.innerHTML.indexOf(".");
+  if (ver !== -1) {
+    return;
+  }
   input.innerHTML = input.innerHTML + ".";
 });
 del.addEventListener("click", () => {
@@ -67,6 +75,14 @@ clear.addEventListener("click", () => {
   input.innerHTML = "";
 });
 plus.addEventListener("click", () => {
+  console.log("before", res1, res2);
+  if (input.innerHTML == "") {
+    return;
+  }
+  if (res1 !== "") {
+    res2 = "+";
+    return;
+  }
   res1 = input.innerHTML;
   res2 = "+";
   input.innerHTML = "";
