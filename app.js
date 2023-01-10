@@ -110,4 +110,5 @@ result.addEventListener("click", () => {
   // выведение на экран
   input.innerHTML = result_total;
 });
+// 10.01.23
 
