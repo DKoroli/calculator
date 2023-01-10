@@ -75,7 +75,6 @@ clear.addEventListener("click", () => {
   input.innerHTML = "";
 });
 plus.addEventListener("click", () => {
-  console.log("before", res1, res2);
   if (input.innerHTML == "") {
     return;
   }
@@ -101,4 +100,12 @@ divide.addEventListener("click", () => {
   res1 = input.innerHTML;
   res2 = "/";
   input.innerHTML = "";
+});
+result.addEventListener("click", () => {
+  if (input.innerHTML == "") {
+    return;
+  }
+  res3 = input.innerHTML;
+  res4 = parseInt(res1) + parseInt(res2) + parseInt(res3);
+  input.innerHTML = res4;
 });
