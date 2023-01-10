@@ -20,10 +20,10 @@ const button8 = document.getElementById("btn8");
 const button9 = document.getElementById("btn9");
 const button0 = document.getElementById("btn0");
 
-let res1 = "";
-let res2 = "";
-let res3 = "";
-let res4 = Number;
+let num1 = "";
+let num2 = "";
+let action = "";
+let result_total = Number;
 
 // add event listeners 'onlick'
 
@@ -78,35 +78,36 @@ plus.addEventListener("click", () => {
   if (input.innerHTML == "") {
     return;
   }
-  if (res1 !== "") {
-    res2 = "+";
+  if (num1 !== "") {
+    action = "+";
     return;
   }
-  res1 = input.innerHTML;
-  res2 = "+";
+  num1 = input.innerHTML;
+  action = "+";
   input.innerHTML = "";
 });
 minus.addEventListener("click", () => {
-  res1 = input.innerHTML;
-  res2 = "-";
+  num1 = input.innerHTML;
+  action = "-";
   input.innerHTML = "";
 });
 multiply.addEventListener("click", () => {
-  res1 = input.innerHTML;
-  res2 = "*";
+  num1 = input.innerHTML;
+  action = "*";
   input.innerHTML = "";
 });
 divide.addEventListener("click", () => {
-  res1 = input.innerHTML;
-  res2 = "/";
+  num1 = input.innerHTML;
+  action = "/";
   input.innerHTML = "";
 });
 result.addEventListener("click", () => {
   if (input.innerHTML == "") {
     return;
   }
-  res3 = input.innerHTML;
-  res4 = parseInt(res1) + parseInt(res2) + parseInt(res3);
-  input.innerHTML = res4;
+  num2 = input.innerHTML;
+  result_total = parseFloat(res1) + parseFloat(res2) + parseFloat(res3);
+  // выведение на экран
+  input.innerHTML = result_total;
 });
-// app
+
