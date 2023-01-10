@@ -109,3 +109,4 @@ result.addEventListener("click", () => {
   res4 = parseInt(res1) + parseInt(res2) + parseInt(res3);
   input.innerHTML = res4;
 });
+// app
