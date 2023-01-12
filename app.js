@@ -23,7 +23,7 @@ const button0 = document.getElementById("btn0");
 let num1 = "";
 let num2 = "";
 let action = "";
-let result_total = Number;
+let result_total = "";
 
 // add event listeners 'onlick'
 
@@ -86,6 +86,12 @@ plus.addEventListener("click", () => {
     action = "+";
     return;
   }
+  if (result_total !== "") {
+    // num1 = result_total;
+    action = "+";
+    // input.innerHTML = "";
+    return;
+  }
   num1 = input.innerHTML;
   action = "+";
   input.innerHTML = "";
@@ -103,11 +109,25 @@ minus.addEventListener("click", () => {
   input.innerHTML = "";
 });
 multiply.addEventListener("click", () => {
+  if (input.innerHTML == "") {
+    return;
+  }
+  if (num1 !== "") {
+    action = "*";
+    return;
+  }
   num1 = input.innerHTML;
   action = "*";
   input.innerHTML = "";
 });
 divide.addEventListener("click", () => {
+  if (input.innerHTML == "") {
+    return;
+  }
+  if (num1 !== "") {
+    action = "/";
+    return;
+  }
   num1 = input.innerHTML;
   action = "/";
   input.innerHTML = "";
@@ -129,4 +149,5 @@ result.addEventListener("click", () => {
     result_total = num1 / num2;
   }
   input.innerHTML = result_total;
+  result_total = String(result_total);
 });
