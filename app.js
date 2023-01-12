@@ -73,6 +73,10 @@ del.addEventListener("click", () => {
 });
 clear.addEventListener("click", () => {
   input.innerHTML = "";
+  num1 = "";
+  num2 = "";
+  action = "";
+  result_total = "";
 });
 plus.addEventListener("click", () => {
   if (input.innerHTML == "") {
@@ -87,6 +91,13 @@ plus.addEventListener("click", () => {
   input.innerHTML = "";
 });
 minus.addEventListener("click", () => {
+  if (input.innerHTML == "") {
+    return;
+  }
+  if (num1 !== "") {
+    action = "-";
+    return;
+  }
   num1 = input.innerHTML;
   action = "-";
   input.innerHTML = "";
@@ -106,9 +117,16 @@ result.addEventListener("click", () => {
     return;
   }
   num2 = input.innerHTML;
-  result_total = parseFloat(res1) + parseFloat(res2) + parseFloat(res3);
-  // выведение на экран
+  num1 = parseFloat(num1);
+  num2 = parseFloat(num2);
+  if (action === "+") {
+    result_total = num1 + num2;
+  } else if (action === "-") {
+    result_total = num1 - num2;
+  } else if (action === "*") {
+    result_total = num1 * num2;
+  } else if (action === "/") {
+    result_total = num1 / num2;
+  }
   input.innerHTML = result_total;
 });
-// 10.01.23
-
