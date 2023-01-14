@@ -87,9 +87,10 @@ plus.addEventListener("click", () => {
     return;
   }
   if (result_total !== "") {
-    // num1 = result_total;
+    num1 = result_total;
     action = "+";
-    // input.innerHTML = "";
+    result_total = "";
+    input.innerHTML = "";
     return;
   }
   num1 = input.innerHTML;
@@ -104,6 +105,13 @@ minus.addEventListener("click", () => {
     action = "-";
     return;
   }
+  if (result_total !== "") {
+    num1 = result_total;
+    action = "-";
+    result_total = "";
+    input.innerHTML = "";
+    return;
+  }
   num1 = input.innerHTML;
   action = "-";
   input.innerHTML = "";
@@ -114,6 +122,13 @@ multiply.addEventListener("click", () => {
   }
   if (num1 !== "") {
     action = "*";
+    return;
+  }
+  if (result_total !== "") {
+    num1 = result_total;
+    action = "*";
+    result_total = "";
+    input.innerHTML = "";
     return;
   }
   num1 = input.innerHTML;
@@ -128,6 +143,13 @@ divide.addEventListener("click", () => {
     action = "/";
     return;
   }
+  if (result_total !== "") {
+    num1 = result_total;
+    action = "/";
+    result_total = "";
+    input.innerHTML = "";
+    return;
+  }
   num1 = input.innerHTML;
   action = "/";
   input.innerHTML = "";
@@ -136,18 +158,25 @@ result.addEventListener("click", () => {
   if (input.innerHTML == "") {
     return;
   }
-  num2 = input.innerHTML;
   num1 = parseFloat(num1);
-  num2 = parseFloat(num2);
-  if (action === "+") {
-    result_total = num1 + num2;
-  } else if (action === "-") {
-    result_total = num1 - num2;
-  } else if (action === "*") {
-    result_total = num1 * num2;
-  } else if (action === "/") {
-    result_total = num1 / num2;
+  num2 = parseFloat(input.innerHTML);
+  switch (action) {
+    case "+":
+      result_total = num1 + num2;
+      break;
+    case "-":
+      result_total = num1 - num2;
+      break;
+    case "*":
+      result_total = num1 * num2;
+      break;
+    case "/":
+      result_total = num1 / num2;
+      break;
   }
   input.innerHTML = result_total;
   result_total = String(result_total);
+  num1 = "";
+  num2 = "";
+  action = "";
 });
