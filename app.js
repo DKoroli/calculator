@@ -78,82 +78,37 @@ clear.addEventListener("click", () => {
   action = "";
   result_total = "";
 });
-plus.addEventListener("click", () => {
+function doAction(actionArg) {
   if (input.innerHTML == "") {
     return;
   }
   if (num1 !== "") {
-    action = "+";
+    action = actionArg;
     return;
   }
   if (result_total !== "") {
     num1 = result_total;
-    action = "+";
+    action = actionArg;
     result_total = "";
     input.innerHTML = "";
     return;
   }
   num1 = input.innerHTML;
-  action = "+";
+  action = actionArg;
   input.innerHTML = "";
-});
-minus.addEventListener("click", () => {
-  if (input.innerHTML == "") {
-    return;
-  }
-  if (num1 !== "") {
-    action = "-";
-    return;
-  }
-  if (result_total !== "") {
-    num1 = result_total;
-    action = "-";
-    result_total = "";
-    input.innerHTML = "";
-    return;
-  }
-  num1 = input.innerHTML;
-  action = "-";
-  input.innerHTML = "";
-});
-multiply.addEventListener("click", () => {
-  if (input.innerHTML == "") {
-    return;
-  }
-  if (num1 !== "") {
-    action = "*";
-    return;
-  }
-  if (result_total !== "") {
-    num1 = result_total;
-    action = "*";
-    result_total = "";
-    input.innerHTML = "";
-    return;
-  }
-  num1 = input.innerHTML;
-  action = "*";
-  input.innerHTML = "";
-});
-divide.addEventListener("click", () => {
-  if (input.innerHTML == "") {
-    return;
-  }
-  if (num1 !== "") {
-    action = "/";
-    return;
-  }
-  if (result_total !== "") {
-    num1 = result_total;
-    action = "/";
-    result_total = "";
-    input.innerHTML = "";
-    return;
-  }
-  num1 = input.innerHTML;
-  action = "/";
-  input.innerHTML = "";
-});
+}
+
+const actionButtons = document.getElementsByClassName("class-actin");
+
+for (i = 0; i < actionButtons.length; i++) {
+  const elem = actionButtons[i];
+  const action = elem.getAttribute("action-attr");
+
+  elem.addEventListener("click", () => {
+    doAction(action);
+  });
+}
+
 result.addEventListener("click", () => {
   if (input.innerHTML == "") {
     return;
