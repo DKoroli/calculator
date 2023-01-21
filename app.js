@@ -27,36 +27,21 @@ let result_total = "";
 
 // add event listeners 'onlick'
 
-button1.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "1";
-});
-button2.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "2";
-});
-button3.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "3";
-});
-button4.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "4";
-});
-button5.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "5";
-});
-button6.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "6";
-});
-button7.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "7";
-});
-button8.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "8";
-});
-button9.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "9";
-});
-button0.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "0";
-});
+function doNumber(numberArg) {
+  input.innerHTML = input.innerHTML + numberArg;
+}
+
+const numberButtons = document.getElementsByClassName("class-number");
+
+for (i = 0; i < numberButtons.length; i++) {
+  const numberElem = numberButtons[i];
+  const number = numberElem.getAttribute("number-attr");
+
+  numberElem.addEventListener("click", () => {
+    doNumber(number);
+  });
+}
+
 dot.addEventListener("click", () => {
   if (input.innerHTML === "") {
     input.innerHTML = "0.";
@@ -78,6 +63,7 @@ clear.addEventListener("click", () => {
   action = "";
   result_total = "";
 });
+
 function doAction(actionArg) {
   if (input.innerHTML == "") {
     return;
@@ -101,10 +87,10 @@ function doAction(actionArg) {
 const actionButtons = document.getElementsByClassName("class-actin");
 
 for (i = 0; i < actionButtons.length; i++) {
-  const elem = actionButtons[i];
-  const action = elem.getAttribute("action-attr");
+  const actionElem = actionButtons[i];
+  const action = actionElem.getAttribute("action-attr");
 
-  elem.addEventListener("click", () => {
+  actionElem.addEventListener("click", () => {
     doAction(action);
   });
 }
