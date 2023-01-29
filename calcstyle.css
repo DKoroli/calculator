@@ -24,25 +24,17 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
+
+@font-face {
+	font-family: 'DS Crystal';
+	src: url('font/fonts/ds_crystal.eot'); /* IE 9 Compatibility Mode .eot */
+	src: url('font/fonts/ds_crystal.eot?#iefix') format('embedded-opentype'), /* IE < 9 eot2 */
+		url('font/fonts/ds_crystal.woff2') format('woff2'), /* Super Modern Browsers woff2*/
+		url('font/fonts/ds_crystal.woff') format('woff'), /* Firefox >= 3.6, any other modern browser woff*/
+		url('font/fonts/ds_crystal.ttf') format('truetype'), /* Safari, Android, iOS ttf*/
+		url('font/fonts/ds_crystal.svg') format('svg'); /* Chrome < 4, Legacy iOS svg*/
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/* ----------------- */
+
 body {
   height: 105vh;
 }
@@ -55,6 +47,7 @@ body {
 }
 
 .calc {
+  font-family: 'DS Crystal';
   color: white;
   font-size: 60px;
   text-align: center;
@@ -87,6 +80,7 @@ body {
 
 .properties {
   height: 120px;
+  max-width: 100px;
   font-size: 30px;
   font-weight: bold;
 }
@@ -111,3 +105,4 @@ body {
 .row > * {
   /* flex-basis: 100%; */
 }
+
