@@ -28,6 +28,9 @@ let result_total = "";
 // add event listeners 'onlick'
 
 function doNumber(numberArg) {
+  if (input.innerHTML.length === 10) {
+    return;
+  }
   input.innerHTML = input.innerHTML + numberArg;
 }
 
@@ -43,6 +46,9 @@ for (i = 0; i < numberButtons.length; i++) {
 }
 
 dot.addEventListener("click", () => {
+  if (input.innerHTML.length === 10) {
+    return;
+  }
   if (input.innerHTML === "") {
     input.innerHTML = "0.";
     return;
