@@ -20,43 +20,28 @@ const button8 = document.getElementById("btn8");
 const button9 = document.getElementById("btn9");
 const button0 = document.getElementById("btn0");
 
-let res1 = "";
-let res2 = "";
-let res3 = "";
-let res4 = Number;
+let num1 = "";
+let num2 = "";
+let action = "";
+let result_total = "";
 
 // add event listeners 'onlick'
 
-button1.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "1";
-});
-button2.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "2";
-});
-button3.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "3";
-});
-button4.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "4";
-});
-button5.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "5";
-});
-button6.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "6";
-});
-button7.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "7";
-});
-button8.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "8";
-});
-button9.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "9";
-});
-button0.addEventListener("click", () => {
-  input.innerHTML = input.innerHTML + "0";
-});
+function doNumber(numberArg) {
+  input.innerHTML = input.innerHTML + numberArg;
+}
+
+const numberButtons = document.getElementsByClassName("class-number");
+
+for (i = 0; i < numberButtons.length; i++) {
+  const numberElem = numberButtons[i];
+  const number = numberElem.getAttribute("number-attr");
+
+  numberElem.addEventListener("click", () => {
+    doNumber(number);
+  });
+}
+
 dot.addEventListener("click", () => {
   if (input.innerHTML === "") {
     input.innerHTML = "0.";
@@ -73,32 +58,66 @@ del.addEventListener("click", () => {
 });
 clear.addEventListener("click", () => {
   input.innerHTML = "";
+  num1 = "";
+  num2 = "";
+  action = "";
+  result_total = "";
 });
-plus.addEventListener("click", () => {
-  console.log("before", res1, res2);
+
+function doAction(actionArg) {
   if (input.innerHTML == "") {
     return;
   }
-  if (res1 !== "") {
-    res2 = "+";
+  if (num1 !== "") {
+    action = actionArg;
     return;
   }
-  res1 = input.innerHTML;
-  res2 = "+";
+  if (result_total !== "") {
+    num1 = result_total;
+    action = actionArg;
+    result_total = "";
+    input.innerHTML = "";
+    return;
+  }
+  num1 = input.innerHTML;
+  action = actionArg;
   input.innerHTML = "";
-});
-minus.addEventListener("click", () => {
-  res1 = input.innerHTML;
-  res2 = "-";
-  input.innerHTML = "";
-});
-multiply.addEventListener("click", () => {
-  res1 = input.innerHTML;
-  res2 = "*";
-  input.innerHTML = "";
-});
-divide.addEventListener("click", () => {
-  res1 = input.innerHTML;
-  res2 = "/";
-  input.innerHTML = "";
+}
+
+const actionButtons = document.getElementsByClassName("class-actin");
+
+for (i = 0; i < actionButtons.length; i++) {
+  const actionElem = actionButtons[i];
+  const action = actionElem.getAttribute("action-attr");
+
+  actionElem.addEventListener("click", () => {
+    doAction(action);
+  });
+}
+
+result.addEventListener("click", () => {
+  if (input.innerHTML == "") {
+    return;
+  }
+  num1 = parseFloat(num1);
+  num2 = parseFloat(input.innerHTML);
+  switch (action) {
+    case "+":
+      result_total = num1 + num2;
+      break;
+    case "-":
+      result_total = num1 - num2;
+      break;
+    case "*":
+      result_total = num1 * num2;
+      break;
+    case "/":
+      result_total = num1 / num2;
+      break;
+  }
+  input.innerHTML = result_total;
+  result_total = String(result_total);
+  num1 = "";
+  num2 = "";
+  action = "";
 });
