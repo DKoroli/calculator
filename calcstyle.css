@@ -100,15 +100,19 @@ nav,
 section {
   display: block;
 }
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 
 @font-face {
-  font-family: "DS Crystal";
-  src: url("font/fonts/ds_crystal.eot"); /* IE 9 Compatibility Mode .eot */
-  src: url("font/fonts/ds_crystal.eot?#iefix") format("embedded-opentype"), /* IE < 9 eot2 */ 
-  url("font/fonts/ds_crystal.woff2") format("woff2"), /* Super Modern Browsers woff2*/ 
-  url("font/fonts/ds_crystal.woff") format("woff"), /* Firefox >= 3.6, any other modern browser woff*/
-      url("font/fonts/ds_crystal.ttf") format("truetype"), /* Safari, Android, iOS ttf*/ 
-      url("font/fonts/ds_crystal.svg") format("svg"); /* Chrome < 4, Legacy iOS svg*/
+	font-family: 'DS Crystal';
+	src: url('font/fonts/ds_crystal.eot'); /* IE 9 Compatibility Mode .eot */
+	src: url('font/fonts/ds_crystal.eot?#iefix') format('embedded-opentype'), /* IE < 9 eot2 */
+		url('font/fonts/ds_crystal.woff2') format('woff2'), /* Super Modern Browsers woff2*/
+		url('font/fonts/ds_crystal.woff') format('woff'), /* Firefox >= 3.6, any other modern browser woff*/
+		url('font/fonts/ds_crystal.ttf') format('truetype'), /* Safari, Android, iOS ttf*/
+		url('font/fonts/ds_crystal.svg') format('svg'); /* Chrome < 4, Legacy iOS svg*/
 }
 
 body {
@@ -181,3 +185,4 @@ body {
 .row > * {
   /* flex-basis: 100%; */
 }
+
