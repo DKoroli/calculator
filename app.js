@@ -121,3 +121,4 @@ result.addEventListener("click", () => {
   num2 = "";
   action = "";
 });
+
