@@ -140,11 +140,12 @@ footer, header, hgroup, menu, nav, section {
   max-width: 400px;
   height: 420px;
   margin: auto;
-  background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 113px -13px black;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px 5px black;
 }
 
 .inp-properties {
+  padding-left: 10px;
   font-family: 'DS Crystal';
   letter-spacing: 2px;
   max-width: 300px;
