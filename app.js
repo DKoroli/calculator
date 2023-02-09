@@ -71,10 +71,13 @@ clear.addEventListener("click", () => {
 });
 
 function doAction(actionArg) {
-  if (input.innerHTML == "") {
+  console.log("doAction");
+  if (input.innerHTML == "" && num1 == "") {
+    console.log("fuckYou");
     return;
   }
   if (num1 !== "") {
+    console.log("ghjf");
     action = actionArg;
     return;
   }
@@ -90,21 +93,7 @@ function doAction(actionArg) {
   input.innerHTML = "";
 }
 
-const actionButtons = document.getElementsByClassName("class-actin");
-
-for (i = 0; i < actionButtons.length; i++) {
-  const actionElem = actionButtons[i];
-  const action = actionElem.getAttribute("action-attr");
-
-  actionElem.addEventListener("click", () => {
-    doAction(action);
-  });
-}
-
-result.addEventListener("click", () => {
-  if (input.innerHTML == "") {
-    return;
-  }
+function resultAction(resAction) {
   num1 = parseFloat(num1);
   num2 = parseFloat(input.innerHTML);
   switch (action) {
@@ -121,10 +110,66 @@ result.addEventListener("click", () => {
       result_total = num1 / num2;
       break;
   }
-  input.innerHTML = result_total;
+  input.innerHTML = "";
   result_total = String(result_total);
+  num1 = result_total;
+  num2 = "";
+  action = resAction;
+}
+
+const actionButtons = document.getElementsByClassName("class-actin");
+
+for (i = 0; i < actionButtons.length; i++) {
+  const actionElem = actionButtons[i];
+  const action = actionElem.getAttribute("action-attr");
+
+  actionElem.addEventListener("click", (e) => {
+    if (num1 !== "" && input.innerHTML !== "" && action !== "") {
+      resultAction(action);
+      return;
+    }
+    doAction(action);
+  });
+}
+
+result.addEventListener("click", () => {
+  if (input.innerHTML == "") {
+    return;
+  }
+  num1 = parseFloat(num1);
+  num2 = parseFloat(input.innerHTML);
+  console.log(num1, typeof num1, num2, typeof num2);
+  switch (action) {
+    case "+":
+      result_total = num1 + num2;
+      break;
+    case "-":
+      result_total = num1 - num2;
+      break;
+    case "*":
+      result_total = num1 * num2;
+      break;
+    case "/":
+      result_total = num1 / num2;
+      break;
+  }
+  console.log("switch:" + action, "switch result:" + result_total);
+  console.log("result length:" + result_total.length);
+  console.log("type of result:" + typeof result_total);
+  let exam = String(result_total);
+  console.log("type of exam:" + typeof exem, "length of exam:" + exam.length);
+  if (exam.length > 10) {
+    input.innerHTML = result_total.toExponential(4);
+    console.log("if:" + result_total);
+  } else {
+    input.innerHTML = result_total;
+    console.log("else:" + result_total.length);
+    console.log(result_total.length);
+  }
+  result_total = String(result_total);
+  input.innerHTML = result_total;
+  console.log("type of result_total:" + typeof result_total);
   num1 = "";
   num2 = "";
   action = "";
 });
-
