@@ -71,7 +71,6 @@ clear.addEventListener("click", () => {
 });
 
 function doAction(actionArg) {
-  console.log("doAction");
   if (input.innerHTML == "" && num1 == "") {
     console.log("fuckYou");
     return;
@@ -138,7 +137,6 @@ result.addEventListener("click", () => {
   }
   num1 = parseFloat(num1);
   num2 = parseFloat(input.innerHTML);
-  console.log(num1, typeof num1, num2, typeof num2);
   switch (action) {
     case "+":
       result_total = num1 + num2;
@@ -153,22 +151,14 @@ result.addEventListener("click", () => {
       result_total = num1 / num2;
       break;
   }
-  console.log("switch:" + action, "switch result:" + result_total);
-  console.log("result length:" + result_total.length);
-  console.log("type of result:" + typeof result_total);
   let exam = String(result_total);
-  console.log("type of exam:" + typeof exem, "length of exam:" + exam.length);
   if (exam.length > 10) {
-    input.innerHTML = result_total.toExponential(4);
-    console.log("if:" + result_total);
+    result_total = result_total.toExponential(2);
   } else {
     input.innerHTML = result_total;
-    console.log("else:" + result_total.length);
-    console.log(result_total.length);
   }
   result_total = String(result_total);
   input.innerHTML = result_total;
-  console.log("type of result_total:" + typeof result_total);
   num1 = "";
   num2 = "";
   action = "";

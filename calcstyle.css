@@ -100,19 +100,30 @@ nav,
 section {
   display: block;
 }
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 @font-face {
-	font-family: 'DS Crystal';
-	src: url('font/fonts/ds_crystal.eot'); /* IE 9 Compatibility Mode .eot */
-	src: url('font/fonts/ds_crystal.eot?#iefix') format('embedded-opentype'), /* IE < 9 eot2 */
-		url('font/fonts/ds_crystal.woff2') format('woff2'), /* Super Modern Browsers woff2*/
-		url('font/fonts/ds_crystal.woff') format('woff'), /* Firefox >= 3.6, any other modern browser woff*/
-		url('font/fonts/ds_crystal.ttf') format('truetype'), /* Safari, Android, iOS ttf*/
-		url('font/fonts/ds_crystal.svg') format('svg'); /* Chrome < 4, Legacy iOS svg*/
+  font-family: "DS Crystal";
+  src: url("font/fonts/ds_crystal.eot"); /* IE 9 Compatibility Mode .eot */
+  src: url("font/fonts/ds_crystal.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 eot2 */ url("font/fonts/ds_crystal.woff2") format("woff2"),
+    /* Super Modern Browsers woff2*/ url("font/fonts/ds_crystal.woff")
+      format("woff"),
+    /* Firefox >= 3.6, any other modern browser woff*/
+      url("font/fonts/ds_crystal.ttf") format("truetype"),
+    /* Safari, Android, iOS ttf*/ url("font/fonts/ds_crystal.svg") format("svg"); /* Chrome < 4, Legacy iOS svg*/
 }
 
 .headcalc {
@@ -121,17 +132,16 @@ footer, header, hgroup, menu, nav, section {
   height: 150px;
   /* border-bottom: solid 2px rgba(4, 12, 3, 0.627); */
   box-shadow: 0 0 20px rgba(21, 198, 8, 0.627);
- }
+}
 
 .calc {
   padding-top: 50px;
-  font-family: 'DS Crystal';
+  font-family: "DS Crystal";
   letter-spacing: 10px;
   color: rgba(21, 198, 8, 0.627);
   font-size: 60px;
   text-align: center;
-  text-shadow: 2px 5px 5px rgba(0,0,0,0.2);
-
+  text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .calculator {
@@ -140,15 +150,15 @@ footer, header, hgroup, menu, nav, section {
   max-width: 400px;
   height: 420px;
   margin: auto;
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 50px 5px black;
+  background: rgba(0, 0, 0, 1);
+  box-shadow: 0 0 4px 4px black;
 }
 
 .inp-properties {
   text-align: right;
   padding-left: 10px;
   padding-right: 10px;
-  font-family: 'DS Crystal';
+  font-family: "DS Crystal";
   letter-spacing: 2px;
   max-width: 300px;
   font-size: 50px;
@@ -167,19 +177,20 @@ footer, header, hgroup, menu, nav, section {
   height: 70px;
   font-size: 30px;
   font-weight: bold;
-    /* effects */
+  /* effects */
   text-decoration: none;
   border: 1px solid black;
   border-radius: 6px;
   box-shadow: -3px -3px 5px rgb(82 85 86) inset;
   transition: 0.2s;
-  } 
-  .result:hover { background: rgba(21, 198, 8, 0.627); }
-  .result:active {
-    background: rgb(33,147,90);
-    box-shadow: 0 -3px rgb(43 68 61) inset;
-  }
-
+}
+.result:hover {
+  background: rgba(21, 198, 8, 0.627);
+}
+.result:active {
+  background: rgb(33, 147, 90);
+  box-shadow: 0 -3px rgb(43 68 61) inset;
+}
 
 .properties {
   height: 70px;
@@ -192,13 +203,14 @@ footer, header, hgroup, menu, nav, section {
   border-radius: 6px;
   box-shadow: -3px -3px 5px rgb(82 85 86) inset;
   transition: 0.2s;
-} 
-.properties:hover { background: rgba(21, 198, 8, 0.627); }
+}
+.properties:hover {
+  background: rgba(21, 198, 8, 0.627);
+}
 .properties:active {
-  background: rgb(33,147,90);
+  background: rgb(33, 147, 90);
   box-shadow: 0 -3px rgb(43 68 61) inset;
 }
-
 
 .flex-grow {
   flex: 1;
@@ -216,6 +228,3 @@ footer, header, hgroup, menu, nav, section {
   display: flex;
   flex-wrap: wrap;
 }
-
-
-
