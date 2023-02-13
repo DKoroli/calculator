@@ -24,7 +24,7 @@ let num1 = "";
 let num2 = "";
 let action = "";
 let result_total = "";
-
+let checkPoint = "";
 // add event listeners 'onlick'
 
 function doNumber(numberArg) {
@@ -42,6 +42,8 @@ for (i = 0; i < numberButtons.length; i++) {
 
   numberElem.addEventListener("click", () => {
     doNumber(number);
+    checkPoint = number;
+    console.log("number = " + checkPoint);
   });
 }
 
@@ -128,6 +130,8 @@ for (i = 0; i < actionButtons.length; i++) {
       return;
     }
     doAction(action);
+    checkPoint = action;
+    console.log("action = " + checkPoint);
   });
 }
 
@@ -162,4 +166,7 @@ result.addEventListener("click", () => {
   num1 = "";
   num2 = "";
   action = "";
+  const resultButtons = document.getElementsByClassName("result");
+  checkPoint = resultButtons.getAttribute("result-attr");;
+  console.log("result = " + checkPoint);
 });
