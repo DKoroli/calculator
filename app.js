@@ -166,7 +166,10 @@ result.addEventListener("click", () => {
   num1 = "";
   num2 = "";
   action = "";
-  const resultButtons = document.getElementsByClassName("result");
-  checkPoint = resultButtons.getAttribute("result-attr");;
+  // const resultButtons = document.getElementById("resultBtn");
+  // console.log("resultButtons = " + resultButtons);
+  // console.log("type of resultButtons: " + typeof resultButtons);
+  checkPoint = "=";
+  console.log(typeof checkPoint);
   console.log("result = " + checkPoint);
 });
