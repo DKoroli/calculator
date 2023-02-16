@@ -1,24 +1,9 @@
 // define buttons/elements
 const input = document.getElementById("input");
 const result = document.getElementById("resultBtn");
-const plus = document.getElementById("plusBtn");
 const dot = document.getElementById("dotBtn");
 const clear = document.getElementById("clearBtn");
-const minus = document.getElementById("minusBtn");
-const multiply = document.getElementById("multiplyBtn");
-const divide = document.getElementById("divideBtn");
 const del = document.getElementById("delBtn");
-
-const button1 = document.getElementById("btn1");
-const button2 = document.getElementById("btn2");
-const button3 = document.getElementById("btn3");
-const button4 = document.getElementById("btn4");
-const button5 = document.getElementById("btn5");
-const button6 = document.getElementById("btn6");
-const button7 = document.getElementById("btn7");
-const button8 = document.getElementById("btn8");
-const button9 = document.getElementById("btn9");
-const button0 = document.getElementById("btn0");
 
 let num1 = "";
 let num2 = "";
@@ -41,9 +26,12 @@ for (i = 0; i < numberButtons.length; i++) {
   const number = numberElem.getAttribute("number-attr");
 
   numberElem.addEventListener("click", () => {
+    if (checkPoint == "=") {
+      input.innerHTML = "";
+      result_total = "";
+    }
     doNumber(number);
     checkPoint = number;
-    console.log("number = " + checkPoint);
   });
 }
 
@@ -70,15 +58,14 @@ clear.addEventListener("click", () => {
   num2 = "";
   action = "";
   result_total = "";
+  checkPoint = "";
 });
 
 function doAction(actionArg) {
   if (input.innerHTML == "" && num1 == "") {
-    console.log("fuckYou");
     return;
   }
   if (num1 !== "") {
-    console.log("ghjf");
     action = actionArg;
     return;
   }
@@ -131,7 +118,6 @@ for (i = 0; i < actionButtons.length; i++) {
     }
     doAction(action);
     checkPoint = action;
-    console.log("action = " + checkPoint);
   });
 }
 
@@ -166,10 +152,5 @@ result.addEventListener("click", () => {
   num1 = "";
   num2 = "";
   action = "";
-  // const resultButtons = document.getElementById("resultBtn");
-  // console.log("resultButtons = " + resultButtons);
-  // console.log("type of resultButtons: " + typeof resultButtons);
   checkPoint = "=";
-  console.log(typeof checkPoint);
-  console.log("result = " + checkPoint);
 });
